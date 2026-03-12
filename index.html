@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chorente TV</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <style>
+        body { background: #000; color: #fff; text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; }
+        h1 { color: #ff0000; font-size: 2.5em; margin-bottom: 10px; text-shadow: 2px 2px 4px #333; }
+        .container { max-width: 600px; margin: 0 auto; }
+        
+        /* Contenedor del video */
+        .video-box { background: #111; border: 2px solid #333; border-radius: 15px; padding: 10px; margin-bottom: 20px; box-shadow: 0 0 20px rgba(255,0,0,0.2); }
+        video { width: 100%; border-radius: 10px; background: #000; }
+        
+        /* Botones */
+        .btn { display: block; background: #cc0000; color: white; padding: 15px; margin: 10px 0; border-radius: 10px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .btn:hover { background: #ff0000; transform: scale(1.02); }
+        .btn-vlc { background: #ff8800; } /* Naranja VLC */
+        
+        p { color: #888; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Chorente TV</h1>
+        <p>🔴 Conectando con Muxía...</p>
+
+        <div class="video-box">
+            <video controls autoplay playsinline>
+                <source src="http://chorente.ddns.net:8080/live" type="video/mp2t">
+                <source src="http://chorente.ddns.net:8080/live" type="video/mpeg">
+                Tu navegador no soporta el reproductor integrado.
+            </video>
+        </div>
+
+        <a href="http://chorente.ddns.net:8080/live" class="btn">VER EN EL NAVEGADOR</a>
+
+        <a href="intent://chorente.ddns.net:8080/live#Intent;scheme=http;type=video/*;package=org.videolan.vlc;S.title=Chorente%20TV;end" class="btn btn-vlc">ABRIR EN APP VLC (Recomendado)</a>
+
+        <p>Si la imagen se queda fija, refresca la página o usa el botón naranja.</p>
+    </div>
+
+</body>
+</html>
