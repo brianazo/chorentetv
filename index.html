@@ -5,47 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CHORENTE TV</title>
     <style>
-        body { 
+        /* Fondo negro y quitar márgenes */
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            width: 100%; 
+            height: 100%; 
             background-color: #000; 
-            color: white; 
-            text-align: center; 
-            font-family: sans-serif; 
-            padding-top: 50px;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
         }
-        .boton {
-            display: inline-block;
+
+        /* El botón gigante */
+        .boton-unico {
+            width: 90%;
+            max-width: 400px;
+            height: 200px;
             background-color: #ff0000;
             color: white;
-            padding: 20px 40px;
             text-decoration: none;
+            font-family: sans-serif;
             font-weight: bold;
-            border-radius: 10px;
-            font-size: 20px;
-            margin-top: 20px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            box-shadow: 0 0 50px rgba(255, 0, 0, 0.5);
+            text-align: center;
+            border: 5px solid white;
         }
-        h1 { font-size: 40px; color: #ff0000; }
-        p { font-size: 18px; }
+
+        .boton-unico:active {
+            background-color: #b30000;
+            transform: scale(0.95);
+        }
     </style>
 </head>
 <body>
 
-    <h1>CHORENTE TV</h1>
-    <p>🔴 Conectando con Muxía...</p>
-    <p>Si no se abre VLC solo, pulsa el botón:</p>
-
-    <a href="intent://chorente.ddns.net:8080/live#Intent;scheme=http;type=video/*;package=org.videolan.vlc;S.title=Chorente%20TV;end" class="boton">
-        VER PARTIDO (VLC)
+    <a href="intent://chorente.ddns.net:8080/live#Intent;scheme=http;type=video/*;package=org.videolan.vlc;S.title=Chorente%20TV;end" class="boton-unico">
+        > PULSAR AQUÍ <
     </a>
-
-    <script>
-        // Intento de apertura automática inmediata
-        function abrirVLC() {
-            window.location.href = "intent://chorente.ddns.net:8080/live#Intent;scheme=http;type=video/*;package=org.videolan.vlc;S.title=Chorente%20TV;end";
-        }
-        
-        // Se ejecuta nada más cargar la página
-        window.onload = abrirVLC;
-    </script>
-
-</body>
-</html>
